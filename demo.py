@@ -4,7 +4,7 @@ demo.py
 A simple mental health triage demo using emotion classification via a Hugging Face transformer.
 It identifies emotional severity and flags suicide risk to help prioritise urgent support cases.
 
-Author: [Your Name]
+Author: Lohith Karthesan
 Generated partially with assistance from LLMs
 """
 
@@ -39,15 +39,15 @@ def classify_severity(text: str, emotions: list) -> str:
     fear = emotions.get("fear", 0)
 
     if contains_suicide_phrase(text):
-        return "🔴 Immediate: Self Harm Mentioned"
+        return "Immediate: Self Harm Mentioned"
     if sadness > 0.7 or fear > 0.6:
-        return "🔴 Very Severe"
+        return "Very Severe"
     elif sadness > 0.5 or fear > 0.4:
-        return "🟠 Severe"
+        return "Severe"
     elif sadness > 0.3 or fear > 0.2:
-        return "🟡 Moderate"
+        return "Moderate"
     else:
-        return "🟢 Mild"
+        return "Mild"
 
 def analyse_emotions_and_severity(texts: list):
     """
